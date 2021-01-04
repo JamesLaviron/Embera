@@ -43,20 +43,12 @@ class Podinstall extends \Embera\Adapters\Service
 
         $episode = $matches[2];
 
-        $html = <<<EOD
-            <div class="pi-wrapper" data-podcast-id="%s" data-episode="%s">
-            <script>
-                !function (e, t) { var c, a; (c = t.createElement("script")).src = "https://podcasts.20minutes.fr/v1/embed/%s.js", c.async = 1, (a = t.getElementsByTagName("script")[0]).parentNode.insertBefore(c, a) }(0, document);
-            </script>
-            </div>
-EOD;
-
         return array(
             'version' => '1.0',
             'type' => 'rich',
             'provider_name' => 'Podinstall',
             'provider_url' => '',
-            'html' => sprintf($html, $sectionId, $episode, $sectionId)
+            'html' => '<div class="pi-wrapper" data-podcast-id="' . $sectionId . '" data-episode="' . $episode . '"><script>!function (e, t) { var c, a; (c = t.createElement("script")).src = "https://podcasts.20minutes.fr/v1/embed/' . $sectionId . '.js", c.async = 1, (a = t.getElementsByTagName("script")[0]).parentNode.insertBefore(c, a) }(0, document);</script></div>'
         );
     }
 }
