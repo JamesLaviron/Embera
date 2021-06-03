@@ -16,13 +16,13 @@ class Podinstall extends \Embera\Adapters\Service
     {
         $this->url->stripLastSlash();
 
-        return (preg_match('~podcasts.20minutes.fr/20-minutes-(?:sixieme-science|minute-papillon|juste-un-droit|beraud-lete-dans-vos-oreilles|anne-laetitia-beraud-tout-sexplique)/[0-9]+-[\w-]+.html~i', $this->url));
+        return (preg_match('~podcasts.20minutes.fr/20-minutes-(?:sixieme-science|minute-papillon|juste-un-droit|beraud-lete-dans-vos-oreilles|anne-laetitia-beraud-tout-sexplique|letat-des-lieux)/[0-9]+-[\w-]+.html~i', $this->url));
     }
 
     /** inline {@inheritdoc} */
     public function fakeResponse()
     {
-        preg_match('~podcasts.20minutes.fr/20-minutes-(sixieme-science|minute-papillon|juste-un-droit|beraud-lete-dans-vos-oreilles|anne-laetitia-beraud-tout-sexplique)/([0-9]+-[\w-]+).html~i', $this->url, $matches);
+        preg_match('~podcasts.20minutes.fr/20-minutes-(sixieme-science|minute-papillon|juste-un-droit|beraud-lete-dans-vos-oreilles|anne-laetitia-beraud-tout-sexplique|letat-des-lieux)/([0-9]+-[\w-]+).html~i', $this->url, $matches);
         
         switch ($matches[1]) {
             case 'sixieme-science':
@@ -39,6 +39,9 @@ class Podinstall extends \Embera\Adapters\Service
             break;
             case 'anne-laetitia-beraud-tout-sexplique':
               $sectionId = 'acb2b58c61af242e7e8f340b38078211004a5f38';
+            break;
+            case 'letat-des-lieux':
+              $sectionId = 'f31f32f509ab5f195937db9d90dea8c62e8afa71';
             break;
           default:
             $sectionId = '';

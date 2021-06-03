@@ -10,6 +10,7 @@ class TestPodinstall extends TestProviders
             'https://podcasts.20minutes.fr/20-minutes-minute-papillon/202011201204-les-petites-luxures-le-sexe-dessine-par-simon-frankart.html',
             'https://podcasts.20minutes.fr/20-minutes-sixieme-science/202011130600-le-pergelisol-la-bombe-climatique-qui-menace-la-planete.html',
             'https://podcasts.20minutes.fr/20-minutes-juste-un-droit/201911201345-comment-juger-les-violences-conjugales.html',
+            'https://podcasts.20minutes.fr/20-minutes-letat-des-lieux/202106030836-le-confinement-nous-donne-envie-de-demenager-mais-faut-il-sa.html',
         ),
         'invalid' => array(
             'https://podcasts.20minutes.fr/',
